@@ -10,15 +10,25 @@ const scripts = fs.readdirSync(path.join(__dirname, 'scripts'))
     return {
       ...acc,
       [path.basename(filename, '.js')]: file
-    }
+    };
   }, {});
 
 const cli = meow(`
   Usage
-      $ advent <day>
+    $ advent <day>
 
-    Examples
-      $ advent 1
-`);
+  Options
+    --test, -t Run against test data
 
-scripts[cli.input[0]]();
+  Examples
+    $ advent 1
+`, {
+  flags: {
+    test: {
+      type: 'boolean',
+      alias: 't'
+    }
+  }
+});
+
+scripts[cli.input[0]](cli.flags.test);
