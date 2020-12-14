@@ -1,8 +1,8 @@
 const input = require('../utils/input');
 const log = require('../utils/log');
 
-function isSum (a, b, total) {
-  return a + b === total;
+function isSum (a, b, c, total) {
+  return a + b + c === total;
 }
 
 module.exports = () => {
@@ -13,12 +13,14 @@ module.exports = () => {
 
   numbers.find((a) => {
     return numbers.find((b) => {
-      if (isSum(a, b, 2020)) {
-        found = a * b;
-        return true;
-      } else {
-        return false;
-      }
+      return numbers.find((c) => {
+        if (isSum(a, b, c, 2020)) {
+          found = a * b * c;
+          return true;
+        } else {
+          return false;
+        }
+      });
     });
   });
 
