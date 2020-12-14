@@ -1,0 +1,21 @@
+{
+  "name": "2020-advent",
+  "version": "1.0.0",
+  "description": "2020 Advent of Code",
+  "main": "index.js",
+  "repository": "git@github.com:nelsonpecora/2020-advent.git",
+  "author": "Nelson Pecora <nelson@keats.me>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "devDependencies": {
+    "chalk": "^4.1.0",
+    "meow": "^8.0.0",
+    "semistandard": "^16.0.0"
+  },
+  "dependencies": {
+    "lodash": "^4.17.20"
+  }
+}
